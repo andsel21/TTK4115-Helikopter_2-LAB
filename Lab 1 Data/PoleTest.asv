@@ -1,0 +1,19 @@
+syms Kpp Kpd wn zeta real
+
+
+Lp = 0.175;
+Kf = 0.2168;
+K1 = Lp*Kf;
+% System parameter
+K1 = 10;
+
+% Desired poles
+lambda1 = -2;
+lambda2 = -3;
+
+% Calculate gains
+Kpd = -(lambda1 + lambda2)/K1;
+Kpp = (lambda1 * lambda2)/K1;
+
+fprintf('Kpd = %.4f\n', Kpd);
+fprintf('Kpp = %.4f\n', Kpp);
